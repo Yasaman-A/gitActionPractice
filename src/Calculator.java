@@ -19,6 +19,7 @@ public class Calculator {
 		if (a<b) {
 			result = a * b;
 		}else {
+			
 			result = a/b;
 		}
 		return result;
