@@ -8,9 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+
 class CalculatorTest {
 
 	private static Calculator calculator;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		calculator = new Calculator();
