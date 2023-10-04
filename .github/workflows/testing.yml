@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI-testing
 
 # Controls when the action will run. 
 on:
@@ -34,8 +34,11 @@ jobs:
         run: |
           mkdir bin
           mkdir lib
+          
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.5.2/junit-platform-console-standalone-1.5.2.jar -o lib/junit-platform-console-standalone-1.5.2.jar
 
           javac -d bin/ $(find src/ -name "*.java")
+          javac -d bin -cp bin:lib/junit-platform-console-standalone-1.5.2.jar $(find test/ -name "*.java")
+          
           java -jar lib/junit-platform-console-standalone-1.5.2.jar -cp bin --scan-class-path
           
